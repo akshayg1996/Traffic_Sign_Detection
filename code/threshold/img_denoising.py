@@ -1,18 +1,3 @@
-import numpy as np
-import cv2
-from matplotlib import pyplot as plt
-
-img = cv2.imread('output.png')
-b,g,r = cv2.split(img)           # get b,g,r
-rgb_img = cv2.merge([r,g,b])     # switch it to rgb
-
-# Denoising
-dst = cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
-#dst = cv2.fastNlMeansDenoising(img,None,10,7,21)
-
-b,g,r = cv2.split(dst)           # get b,g,r
-rgb_dst = cv2.merge([r,g,b])     # switch it to rgb
-
-plt.subplot(211),plt.imshow(rgb_img)
-plt.subplot(212),plt.imshow(rgb_dst)
-plt.show()
+version https://git-lfs.github.com/spec/v1
+oid sha256:ff10001594beda6c24f6a11260bf1eca5ed7842c524dd32d0bce366d0b97864a
+size 520
